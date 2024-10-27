@@ -1,0 +1,51 @@
+@media (max-width: 1050px) {
+    #about-us {
+        grid-template-columns: 1fr;
+    }
+
+    .host-container,
+    .tickets-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 724px) {
+    .navigation {
+        justify-content: space-between;
+        padding: 20px;
+    }
+
+    .logo img {
+        max-height: 60px;
+    }
+
+    .main-tex h1 {
+        font-size: 2.4rem;
+    }
+    .main-text {
+        width: 90%;
+        max-width: 400px;
+    }
+    .main-text p,
+    .main-text span {
+        font-size: 1rem;
+    }
+    .about-text h2,
+    .host-heading h3,
+    .tickets-heading h3 {
+        font-size: 2rem;
+    }
+
+    .tickets-container,
+     .host-container {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-container {
+        justify-content: center;
+        align-items: center;
+        align-items: center;
+        gap: 50px;
+    }
+
+}

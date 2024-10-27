@@ -1,0 +1,567 @@
+body {
+    background-color: var(--secondary-color);
+    background-image: url(../image/bg-3.png);
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+}
+
+header {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    width: 90%;
+    margin: auto;
+    padding: 1rem 0rem;
+    position: relative;
+}
+
+.logo {
+    display: flex;
+    z-index: 103;
+}
+
+.logo img {
+    max-height: 80px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+.menu {
+    display: none;
+    position: absolute;
+    width: 100%;
+    left: 0px;
+    top: 100%;
+    z-index: 103;
+}
+
+.menu li a {
+    display: flex;
+    padding: 1.9rem;
+    margin: 0.5rem;
+    width: 100%;
+    color: #dadada;
+    font-weight: 500;
+    border-bottom: 1px solid #7a7a7a17;
+    background-color: #251b2ee1;
+    backdrop-filter: blur(5px);
+    transition: all ease-in 0.3s;
+}
+
+.menu li a:hover{
+    color: #ffffff;
+}
+
+.menu-icon {
+    cursor: pointer;
+    padding: 0.5rem;
+    position: relative;
+    user-select: none;
+    z-index: 106;
+}
+
+.menu-icon .nav-icon {
+    background-color: #aaaaaa;
+    display: block;
+    height: 2px;
+    width: 25px;
+    position: relative;
+}
+
+.menu-icon .nav-icon::before,
+.menu-icon .nav-icon::after {
+    content: '';
+    background-color: #c0c0c0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transition: all ease-in 0.3s;
+}
+
+.menu-icon .nav-icon::after {
+    top: -9px;
+    right: 0px;
+}
+
+.menu-icon .nav-icon::before {
+    top: 9px;
+    right: 0px;
+}
+
+#menu-btn:checked ~ .menu-icon .nav-icon::after {
+    top: 0px;
+    transform: rotate(45deg);
+}
+
+#menu-btn:checked ~ .menu-icon .nav-icon::before {
+    top: 0px;
+    transform: rotate(-45deg);
+}
+
+#menu-btn:checked ~ .menu-icon .nav-icon {
+    background-color: transparent;
+}
+
+
+#menu-btn:checked ~ .menu {
+    display: block;
+}
+
+#menu-btn {
+    display: none;
+}
+
+#main {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+}
+
+.main-bg {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    object-fit: contain;
+    object-position: center bottom;
+    animation: floating 6s infinite;
+}
+
+.cover-bg {
+    height: 100vh;
+    object-fit: cover;
+}
+
+@keyframes floating {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(20px);
+    }
+    100% {
+        transform: translateY(20px);
+    }
+}
+
+.main-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -40%);
+}
+
+.main-text h1 {
+    font-size: 6rem;
+    color: #ffffff;
+    font-weight: 400;
+    font-family: 'Metal Mania', sans-serif;
+}
+
+.main-text p {
+    color: #e2d9ec;
+    font-size: 1.3rem;
+    max-width: 630px;
+    margin: 1rem 0rem;
+}
+
+.main-text span {
+    color: #bf82e0;
+    font-weight: 500;
+    font-size: 1.2rem;
+    margin-top: 0.8rem;
+}
+
+.main-text a{
+    max-width: 210px;
+    width: 100%;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: 600;
+    margin-top: 30px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 2rem;
+}
+
+#about-us {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0px auto;
+    padding: 120px 0px;
+    display: grid;
+    grid-template-columns:  1.4fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-img {
+    width: 100%;
+    display: flex;
+}
+
+.about-img img {
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
+    animation: floating 6s infinite reverse;
+}
+
+.about-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-text h2 {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 4rem;
+    font-family: "Metal Mania", sans-serif;
+}
+
+.about-text p {
+    color: #e2d9ec;
+    font-size: 1.1rem;
+    margin: 15px 0px;
+}
+
+.about-date-box {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 25px;
+    margin: 12px 0px;
+}
+
+.about-date-icon {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: #725aa5;
+    fill: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-date-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-date-text span {
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.about-date-text p {
+    margin: 0px;
+    font-family: 0.9rem;
+}
+
+.about-text a {
+    color: #ffffff;
+    width: 100%;
+    max-width: 180px;
+    border-radius: 30px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e7471f;
+    margin-top: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all ease 0.3s;
+}
+
+.about-text a:hover {
+    transform: scale(1.1);
+}
+
+#host,
+#buy-tickets {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0px auto;
+    padding: 80px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.host-heading,
+.tickets-heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.host-heading h3,
+.tickets-heading h3 {
+    color: #ffffff;
+    font-size: 4rem;
+    font-family: "Metal Mania", sans-serif;
+}
+
+.host-heading p,
+.tickets-heading p {
+    color: #e2d9ec;
+    max-width: 500px;
+    margin-top: 10px;
+}
+
+.host-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 50px;
+    margin: 100px 0px;
+}
+
+.host-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.host-img {
+    width: 100%;
+    max-height: 500px;
+    display: flex;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.host-img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.host-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px 0px;
+}
+
+.host-text strong {
+    color: #bf82e0;
+    font-family: "Metal Mania", sans-serif;
+    font-weight: 500;
+    font-size: 2rem;
+}
+
+.host-text span {
+    color: #e2d9ec;
+    font-size: 0.9rem;
+    margin-top: 5px;
+    font-weight: 500;
+}
+
+.tickets-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 50px;
+    margin: 50px 0px;
+    width: 100%;
+}
+
+.ticket-box {
+    width: 100%;
+    background-color: #412c4c;
+    padding: 50px 30px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    transition: all ease 0.3s;
+}
+
+.ticket-box:hover {
+    background-color: #1c1320;
+}
+
+.ticket-box img {
+    height: 150px;
+    object-fit: contain;
+    object-position: center;
+    margin-bottom: 20px;
+}
+
+.ticket-box-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.ticket-box-heading h4 {
+    color: #bf82e0;
+    font-size: 2rem;
+    font-family: 'Metal Mania', sans-serif;
+    font-weight: 500;
+}
+
+.ticket-box-heading p {
+    color: #ffffff;
+    font-size: 0.9rem;
+}
+
+.plan-price {
+    font-family: "Metal Mania", sans-serif;
+    font-size: 4rem;
+    color: var(--main-color);
+}
+
+.ticket-box ul {
+    list-style: inside;
+    color: #e2d9ec;
+    margin: 20px 0px;
+}
+
+.ticket-box ul li {
+    margin: 5px 0px;
+}
+
+.ticket-box a {
+    color: #ffffff;
+    background-color: var(--main-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    width: 100%;
+    border-radius: 30px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font: 1.1rem;
+    height: 60px;
+    transition: all ease 0.3s;
+}
+
+.ticket-box a:hover {
+    transform: scale(1.1);
+}
+
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 50px auto;
+    width: 90%;
+}
+
+.footer-img {
+    max-width: 500px;
+    width: 100%;
+    object-fit: contain;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 28px;
+    border-top: 1px solid #9d89c938;
+    margin-top: 30px;
+}
+
+.footer-box {
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-box img {
+    max-height: 80px;
+    object-fit: contain;
+    object-position: center;
+    height: 100%;
+    margin: 20px 0px;
+}
+
+.footer-box ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-box ul li a {
+    color: #e2d9ec;
+    margin: 0px 20px;
+
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-social a {
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    background-color: #725aa5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    fill: #ffffff;
+    font-size: 1rem;
+}
+
+.footer-contact span {
+    color: #e2d9ec;
+    margin-bottom: 5px;
+}
+
+
